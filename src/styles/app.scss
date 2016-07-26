@@ -1,0 +1,98 @@
+body{
+  margin: 0;
+}
+
+#container{
+  display: flex;
+  height: 100vh;
+}
+
+.main{
+  display: flex;
+  width: 75%;
+  background-color: gainsboro;
+  .message-section{
+
+  }
+  .input-section{
+    width: 75%;
+    background-color: rgb(41, 53, 64);
+    height: 8vh;
+    position: absolute;
+    bottom: 0;
+    form{
+      height: 6vh;
+      margin-left: 15px;
+      margin-top: 14px;
+      #text-input{
+        height: 32px;
+        border-radius: 25px;
+        padding: 2px 0 2px 20px;
+        width: 75%;
+        border: none;
+        font-size: 16px;
+        margin-right: 30px;
+        &:focus{
+          outline: none;
+        }
+      }
+      #submit-button{
+        background-color: #13b885;
+        border: none;
+        padding: 10px 20px 10px 20px;
+        border-radius: 20px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.4s;
+        &:focus{
+          outline: none;
+        }
+        &:hover{
+          color: #13b885;
+          background-color: white;
+        }
+      }
+    }
+  }
+}
+
+.side-bar{
+  width:25%;
+  background-color: slategrey;
+  .header{
+    background-color: rgb(41, 53, 64);
+    text-align: center;
+    height: 14vh;
+    min-height: 110px;
+    color: white;
+    h1{
+      margin: 0;
+      padding: 15px 0 10px 0;
+      font-family: Helvetica;
+      font-weight: 100;
+      letter-spacing: 2px;
+    }
+    h2{
+      margin: 0;
+      padding: 0px 0 0 0;
+      font-family: Helvetica;
+      font-weight: 100;
+      letter-spacing: 1px;
+      a{
+        cursor: pointer;
+        text-decoration: none;
+        color: rgb(215, 54, 58);
+        font-weight: 500;
+        transition: 0.4s;
+        &:hover{
+          color: rgba(215, 54, 58, 0.8);
+        }
+      }
+    }
+  }
+  .active-users{
+    
+  }
+
+}

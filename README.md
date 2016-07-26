@@ -56,7 +56,7 @@ const pubnub = PUBNUB({
     });
 
 render(
-  <App />,
+  <App pubnub={pubnub} />,
   document.getElementById('app')
 );
 ```

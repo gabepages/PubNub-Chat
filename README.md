@@ -38,25 +38,5 @@ webpack -w
 ### Now you can initialize PubNub in  `src/scripts/index.js`.
 
 ```js
-//NPM Imports
-import React from 'react';
-import { render } from "react-dom";
 
-//Styles
-import '../styles/app.scss';
-
-//Local File Imports
-import App from './components/App.jsx';
-
-
-//Initialize PubNub instance
-const pubnub = PUBNUB({
-        publish_key : 'pub-c-3dd6d969-eaef-4b1d-a3df-796e4240ec1e',
-        subscribe_key : 'sub-c-01fea1f4-4d1b-11e6-9c7c-0619f8945a4f'
-    });
-
-render(
-  <App pubnub={pubnub} />,
-  document.getElementById('app')
-);
 ```

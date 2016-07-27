@@ -6,6 +6,7 @@ import InputSection from "./InputSection.jsx"
 
 
 export default class MainSection extends React.Component {
+
  render() {
   return (
     <div className="main">

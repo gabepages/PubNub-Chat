@@ -56,7 +56,44 @@ body{
 .main{
   display: flex;
   width: 75%;
-  background-color: gainsboro;
+  background-color: lightgrey;
+  .message-section{
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica;
+    max-height: 92vh;
+    overflow: auto;
+    width: 100%;
+    justify-content: center;
+    .messageSent{
+      align-self: flex-end;
+      h3{
+        display: inline-block;
+        padding: 4px 10px 4px 10px;
+        background: green;
+        border-radius: 27px;
+        font-size: 16px;
+        font-weight: 100;
+        color: white;
+      }
+    }
+    .messageRecieved{
+      p{
+        color: darkgrey;
+        margin: 0;
+      }
+      h3{
+        margin-top: 3px;
+        display: inline-block;
+        padding: 4px 10px 4px 10px;
+        background: green;
+        border-radius: 27px;
+        font-size: 16px;
+        font-weight: 100;
+        color: white;
+      }
+    }
+  }
   .input-section{
     width: 75%;
     background-color: rgb(41, 53, 64);
@@ -130,6 +167,48 @@ body{
         transition: 0.4s;
         &:hover{
           color: rgba(215, 54, 58, 0.8);
+        }
+      }
+    }
+  }
+  .active-users{
+    h2{
+      margin: 0;
+      padding: 12px 0 12px 10px;
+      font-family: Helvetica;
+      font-weight: 100;
+      text-transform: lowercase;
+      font-size: 25px;
+      letter-spacing: 5px;
+      background-color: #13b885;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li{
+        display: flex;
+        align-items: center;
+        padding: 5px 10px 5px 10px;
+        border-top: 2px solid lightslategray;
+        border-bottom: 2px solid lightslategrey;
+        img{
+          height: 60px;
+          border-radius: 45px;
+          width: 60px;
+          margin-right: 10px;
+        }
+        h3{
+          margin-right: 15px;
+          font-family: Helvetica;
+          font-size: 20px;
+          font-weight: 100;
+          letter-spacing: 1px;
+        }
+        p{
+          font-family: Helvetica;
+          font-weight: 100;
+          color: lightgrey;
         }
       }
     }

@@ -21,8 +21,8 @@ export default class ChatRoom extends React.Component {
 
     // Initialize PubNub instance with personal UUID from login page
     const pubnub = PUBNUB({
-      subscribe_key: 'sub-c-86d1dc06-5424-11e6-bd9c-0619f8945a4f',
-      publish_key: 'pub-c-44188f9d-c750-4a9b-bae8-f2000732138a',
+      subscribe_key: 'sub-c-e1c8464a-54f6-11e6-b182-02ee2ddab7fe',
+      publish_key: 'pub-c-1a91a807-a7f6-4bf2-9bb4-9d8936226301',
       uuid: uuid
     });
 
@@ -36,19 +36,37 @@ export default class ChatRoom extends React.Component {
     // subscribe to "suncoast-chat" channel
     pubnub.subscribe({
       channel: 'suncoast-chat',
-      presence : (u) => this.updatePresence(u),
       restore: true,
       connect: () => this.fetchOldMessages(),
-      message: (m) => this.recieveNewMessages(m)
+      message: (m) => this.recieveNewMessages(m),
+      presence: (u) => this.updatePresence(u)
     });
   }
   updatePresence(u){
-    const users = this.state.users;
-    let newUserList = users.concat(u);
-    this.setState({
-      users: newUserList
-    });
+    const users = this.state.users
+    if (u.action == "join"){
+      let newUsers = users.concat(u.uuid)
+      this.setState({
+        users: newUsers
+      })
+    }else{
+      let newUsers = removeUser(users, u.uuid)
+      this.setState({
+        users: newUsers
+      })
+    }
   }
+  removeUser(arr) {
+    var what, a = arguments, L = a.length, ax;
+    while (L > 1 && arr.length) {
+        what = a[--L];
+        while ((ax= arr.indexOf(what)) !== -1) {
+            arr.splice(ax, 1);
+        }
+    }
+    return arr;
+}
+
   fetchOldMessages(){
    const pubnub = this.state.pubnub;
    let messages = this.state.messages;
@@ -77,9 +95,11 @@ export default class ChatRoom extends React.Component {
   sendMessage (message) {
     const pubnub = this.state.pubnub;
     const username = pubnub.get_uuid()
+    let date = new Date();
     const messageData = {
       text: message,
-      username: username
+      username: username,
+      date: date
     };
     // publish(send) message to channel
     pubnub.publish({

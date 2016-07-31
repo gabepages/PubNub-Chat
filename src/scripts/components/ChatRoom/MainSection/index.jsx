@@ -35,13 +35,13 @@ class MessageSection extends React.Component {
         let user = this.props.pubnub.get_uuid();
         if(user == message.username){
           return(
-            <div className='messageSent'>
+            <div className='messageSent' key={message.date} >
               <h3>{message.text}</h3>
             </div>
           )
         }else {
           return(
-            <div className="messageRecieved">
+            <div className="messageRecieved" key={message.date}>
               <p>{message.username}</p>
               <h3>{message.text}</h3>
             </div>

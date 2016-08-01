@@ -9,9 +9,7 @@ export default class Sidebar extends React.Component {
         <h1>Suncoast Chat</h1>
         <h2>with <a href='https://www.pubnub.com/'>PubNub</a></h2>
       </div>
-      <div className="active-users">
-
-      </div>
+      <div className="active-users"></div>
     </div>
   );
  }

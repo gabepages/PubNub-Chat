@@ -50,7 +50,7 @@ export default class ChatRoom extends React.Component {
         users: newUsers
       })
     }else{
-      let newUsers = removeUser(users, u.uuid)
+      let newUsers = this.removeUser(users, u.uuid)
       this.setState({
         users: newUsers
       })
@@ -86,7 +86,6 @@ export default class ChatRoom extends React.Component {
   recieveNewMessages(m){
     let messages = this.state.messages;
     messages[0].push(m);
-    console.log("updated messages: ", messages);
     this.setState({
       messages: messages
     });

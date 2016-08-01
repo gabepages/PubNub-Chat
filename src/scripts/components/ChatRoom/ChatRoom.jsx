@@ -1,12 +1,11 @@
 import React from "react"
 
 //local file imports
-import Sidebar from "./SideBar/Sidebar.jsx"
-import MainSection from "./MainSection/MainSection.jsx"
+import Sidebar from "./SideBar"
+import MainSection from "./MainSection"
 
 
 export default class ChatRoom extends React.Component {
-
  render() {
   return (
     <div id='container'>
@@ -15,5 +14,4 @@ export default class ChatRoom extends React.Component {
     </div>
   );
  }
-
 }

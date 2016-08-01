@@ -1,7 +1,7 @@
 import React from "react"
 
 //local file imports
-import Login from './Login/Login.jsx'
+import Login from './Login'
 import ChatRoom from './ChatRoom/ChatRoom.jsx'
 
 export default class App extends React.Component {

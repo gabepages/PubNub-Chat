@@ -15,6 +15,7 @@ body{
   height: 100vh;
 
   h1{
+    text-align: center;
     margin-top: 185px;
     font-family: Helvetica;
     font-weight: 100;
@@ -56,7 +57,47 @@ body{
 .main{
   display: flex;
   width: 75%;
-  background-color: gainsboro;
+  background-color: lightgrey;
+  .message-section{
+    display: flex;
+    flex-direction: column;
+    font-family: Helvetica;
+    max-height: 92vh;
+    overflow: auto;
+    width: 97%;
+    justify-content: flex-start;
+    padding-left: 15px;
+    padding-right: 15px;
+    .messageSent{
+      align-self: flex-end;
+      h3{
+        display: inline-block;
+        padding: 4px 10px 4px 10px;
+        background: lightslategray;
+        border-radius: 27px;
+        font-size: 16px;
+        font-weight: 100;
+        color: white;
+        margin: 10px 0;
+      }
+    }
+    .messageRecieved{
+      p{
+        color: darkslategrey;
+        margin: 10px 0 0 5px;
+      }
+      h3{
+        margin: 3px 0 5px 0;
+        display: inline-block;
+        padding: 4px 10px 4px 10px;
+        background: rgb(215, 54, 58);
+        border-radius: 27px;
+        font-size: 16px;
+        font-weight: 100;
+        color: white;
+      }
+    }
+  }
   .input-section{
     width: 75%;
     background-color: rgb(41, 53, 64);
@@ -106,8 +147,7 @@ body{
   .header{
     background-color: rgb(41, 53, 64);
     text-align: center;
-    height: 14vh;
-    min-height: 110px;
+    height: 15vh;
     color: white;
     h1{
       margin: 0;
@@ -134,5 +174,48 @@ body{
       }
     }
   }
-
+  .active-users{
+    height: 85vh;
+    overflow: auto;
+    h2{
+      margin: 0;
+      padding: 12px 0 12px 10px;
+      font-family: Helvetica;
+      font-weight: 100;
+      text-transform: lowercase;
+      font-size: 25px;
+      letter-spacing: 5px;
+      background-color: #13b885;
+    }
+    ul{
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      li{
+        display: flex;
+        align-items: center;
+        padding: 5px 10px 5px 10px;
+        border-top: 2px solid lightslategray;
+        border-bottom: 2px solid lightslategrey;
+        img{
+          height: 60px;
+          border-radius: 45px;
+          width: 60px;
+          margin-right: 10px;
+        }
+        h3{
+          margin-right: 15px;
+          font-family: Helvetica;
+          font-size: 20px;
+          font-weight: 100;
+          letter-spacing: 1px;
+        }
+        p{
+          font-family: Helvetica;
+          font-weight: 100;
+          color: lightgrey;
+        }
+      }
+    }
+  }
 }

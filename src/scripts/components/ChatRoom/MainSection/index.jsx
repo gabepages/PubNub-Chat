@@ -1,7 +1,6 @@
 import React from "react";
 
 
-
 export default class MainSection extends React.Component {
   render() {
     return (
@@ -12,11 +11,9 @@ export default class MainSection extends React.Component {
          />
         <InputSection sendMessage={this.props.sendMessage}/>
       </div>
-    );
+    )
   }
-
 }
-
 
 /*****************
 MessageSection Component
@@ -24,15 +21,15 @@ MessageSection Component
 
 class MessageSection extends React.Component {
   render() {
-
     if(this.props.messages.length > 0){
-      let messageList = this.props.messages[0];
+      let messageList = this.props.messages[0]
 
       //map over array of messages
       let messages = messageList.map(function(message){
-
         // Get current user
-        let user = this.props.pubnub.get_uuid();
+        let user = this.props.pubnub.get_uuid()
+
+        //check if message is from current user
         if(user == message.username){
           return(
             <div className='messageSent' key={message.date} >
@@ -55,13 +52,10 @@ class MessageSection extends React.Component {
       )
     }
     return(
-      <div className="message-section">
-
-      </div>
+      <div className="message-section"></div>
     )
   }
 }
-
 
 /*****************
 InputSection Component
@@ -70,11 +64,10 @@ InputSection Component
 class InputSection extends React.Component {
   sendMessage(e){
     e.preventDefault()
-    let message = document.getElementById('text-input').value;
-    document.getElementById('text-input').value = null;
-    this.props.sendMessage(message);
+    let message = document.getElementById('text-input').value
+    document.getElementById('text-input').value = null
+    this.props.sendMessage(message)
   }
-
   render() {
     return (
       <div className="input-section">
@@ -83,6 +76,6 @@ class InputSection extends React.Component {
           <input id="submit-button" type="submit" />
         </form>
       </div>
-    );
+    )
   }
 }

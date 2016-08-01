@@ -14,9 +14,8 @@ export default class ChatRoom extends React.Component {
       users: []
     };
   }
-
   componentWillMount(){
-
+    //Get uuid from login page
     const uuid = this.props.uuid;
 
     // Initialize PubNub instance with personal UUID from login page
@@ -29,7 +28,6 @@ export default class ChatRoom extends React.Component {
     //set pubnub state to be used throughout component
     this.setState({pubnub: pubnub});
   }
-
   componentDidMount(){
     const pubnub = this.state.pubnub;
 
@@ -61,17 +59,17 @@ export default class ChatRoom extends React.Component {
     while (L > 1 && arr.length) {
         what = a[--L];
         while ((ax= arr.indexOf(what)) !== -1) {
-            arr.splice(ax, 1);
+            arr.splice(ax, 1)
         }
     }
     return arr;
-}
-
+  }
   fetchOldMessages(){
-   const pubnub = this.state.pubnub;
-   let messages = this.state.messages;
-   //fetch message history
-   pubnub.history({
+    const pubnub = this.state.pubnub;
+    let messages = this.state.messages;
+
+    //fetch message history
+    pubnub.history({
      channel: 'suncoast-chat',
      count: 25,
      callback: (m) => {
@@ -80,17 +78,15 @@ export default class ChatRoom extends React.Component {
          messages: newMessages
        });
      }
-   });
+    })
   }
-
   recieveNewMessages(m){
-    let messages = this.state.messages;
-    messages[0].push(m);
+    let messages = this.state.messages
+    messages[0].push(m)
     this.setState({
       messages: messages
-    });
+    })
   }
-
   sendMessage (message) {
     const pubnub = this.state.pubnub;
     const username = pubnub.get_uuid()
@@ -100,6 +96,7 @@ export default class ChatRoom extends React.Component {
       username: username,
       date: date
     };
+
     // publish(send) message to channel
     pubnub.publish({
      channel : 'suncoast-chat',
@@ -112,9 +109,7 @@ export default class ChatRoom extends React.Component {
      }
     });
   }
-
   render() {
-
     return (
       <div id='container'>
         <Sidebar
@@ -128,5 +123,4 @@ export default class ChatRoom extends React.Component {
       </div>
     );
   }
-
 }

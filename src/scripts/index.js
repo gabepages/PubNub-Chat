@@ -1,8 +1,6 @@
 //NPM Imports
 import React from 'react';
 import { render } from "react-dom";
-import { Router, Route, hashHistory } from 'react-router'
-
 
 //styles
 import '../styles/app.scss';

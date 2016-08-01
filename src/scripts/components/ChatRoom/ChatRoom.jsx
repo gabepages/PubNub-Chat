@@ -1,7 +1,7 @@
 import React from "react"
 
 //local file imports
-import Sidebar from "./SideBar"
+import Sidebar from "./Sidebar"
 import MainSection from "./MainSection"
 
 

@@ -32,7 +32,20 @@ webpack -w
 #### You must include the PubNub JavaScript SDK in your code before initializing the client.
 
 ```html
- <script src="http://cdn.pubnub.com/pubnub-3.15.2.min.js"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+
+  <div id="app"></div>
+
+  <script src="http://cdn.pubnub.com/pubnub-3.15.2.min.js"></script>
+  <script src="bundle.js"></script>
+</body>
+</html>
 ```
 
 #### Now you can initialize PubNub in  `src/scripts/components/ChatRoom/ChatRoom.jsx`.
@@ -41,32 +54,41 @@ webpack -w
 import React from "react"
 
 //local file imports
-import Sidebar from "./SideBar/Sidebar.jsx"
-import MainSection from "./MainSection/MainSection.jsx"
+import Sidebar from "./Sidebar"
+import MainSection from "./MainSection"
 
 
 export default class ChatRoom extends React.Component {
-componentWillMount(){
+  constructor(props){
+    super(props);
+    this.state = {
+      pubnub: undefined
+    };
+  }
+  componentWillMount(){
 
-  const uuid = this.props.uuid;
-  console.log(uuid);
+    //Get uuid from login page
+    const uuid = this.props.uuid;
 
-  // Initialize PubNub instance with personal UUID from login page
-  const pubnub = PUBNUB({
-    subscribe_key: 'pub-c-3dd6d969-eaef-4b1d-a3df-796e4240ec1e',
-    publish_key: 'sub-c-01fea1f4-4d1b-11e6-9c7c-0619f8945a4f',
-    uuid: uuid
-  });
+    // Initialize PubNub instance with personal UUID from login page
+    const pubnub = PUBNUB({
+      subscribe_key: 'sub-c-e1c8464a-54f6-11e6-b182-02ee2ddab7fe',
+      publish_key: 'pub-c-1a91a807-a7f6-4bf2-9bb4-9d8936226301',
+      uuid: uuid
+    });
 
-}
- render() {
-  return (
-    <div id='container'>
-      <Sidebar />
-      <MainSection />
-    </div>
-  );
- }
-
+    //set pubnub state to be used throughout component
+    this.setState({pubnub: pubnub});
+  }
+  render() {
+    return (
+      <div id='container'>
+        <Sidebar />
+        <MainSection />
+      </div>
+    )
+  }
 }
 ```
+
+##Step 2: Subscribe to a channel

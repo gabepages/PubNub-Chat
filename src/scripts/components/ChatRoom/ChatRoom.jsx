@@ -79,8 +79,7 @@ export default class ChatRoom extends React.Component {
        });
      }
     })
-    const scrollSection = document.querySelector('.message-section')
-    scrollSection.animatescrollTop = scrollSection.scrollHeight
+    this.scrollToBottom()
   }
   recieveNewMessages(m){
     let messages = this.state.messages
@@ -89,8 +88,7 @@ export default class ChatRoom extends React.Component {
       this.setState({
         messages: messages
       })
-      const scrollSection = document.querySelector('.message-section')
-      scrollSection.scrollTop = scrollSection.scrollHeight
+      this.scrollToBottom()
     }
   }
   sendMessage (message) {
@@ -114,8 +112,11 @@ export default class ChatRoom extends React.Component {
        console.log(e);
      }
     });
+    this.scrollToBottom()
+  }
+  scrollToBottom(){
     const scrollSection = document.querySelector('.message-section')
-    scrollSection.animatescrollTop = scrollSection.scrollHeight
+    scrollSection.scrollTop = scrollSection.scrollHeight
   }
   render() {
     return (

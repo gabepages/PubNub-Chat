@@ -161,6 +161,8 @@ export default class ChatRoom extends React.Component {
       this.setState({
         messages: messages
       })
+      const scrollSection = document.querySelector('.message-section')
+      scrollSection.animatescrollTop = scrollSection.scrollHeight
     }
   }
   updatePresence(u){

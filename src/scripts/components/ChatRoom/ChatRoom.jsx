@@ -20,8 +20,8 @@ export default class ChatRoom extends React.Component {
 
     // Initialize PubNub instance with personal UUID from login page
     const pubnub = PUBNUB({
-      subscribe_key: 'sub-c-e1c8464a-54f6-11e6-b182-02ee2ddab7fe',
-      publish_key: 'pub-c-1a91a807-a7f6-4bf2-9bb4-9d8936226301',
+      subscribe_key: 'sub-c-45d8e7b6-58fd-11e6-aba3-0619f8945a4f',
+      publish_key: 'pub-c-bd25c8cd-3180-4937-b282-c2ef857bc538',
       uuid: uuid
     });
 

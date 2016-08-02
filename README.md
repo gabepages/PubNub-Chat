@@ -92,7 +92,7 @@ export default class ChatRoom extends React.Component {
 ```
 
 ##Step 2: Subscribe to a channel
-#### Add PubNubs, `subscribe()` API to listen on a channel, along with the `history()` API to fetch the previous messages in that channel in `src/scripts/components/ChatRoom/ChatRoom.jsx`.
+#### Add PubNubs, `subscribe()` block to listen on a channel, along with the `history()` block to fetch the previous messages in that channel in `src/scripts/components/ChatRoom/ChatRoom.jsx`.
 
 ```js
 import React from "react"

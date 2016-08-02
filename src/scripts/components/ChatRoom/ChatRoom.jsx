@@ -82,7 +82,7 @@ export default class ChatRoom extends React.Component {
   }
   recieveNewMessages(m){
     let messages = this.state.messages
-    if(this.props.messages.length > 0){
+    if(messages.length > 0){
       messages[0].push(m)
       this.setState({
         messages: messages

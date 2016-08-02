@@ -153,6 +153,8 @@ export default class ChatRoom extends React.Component {
        });
      }
     })
+    const scrollSection = document.querySelector('.message-section')
+    scrollSection.animatescrollTop = scrollSection.scrollHeight
   }
   recieveNewMessages(m){
     let messages = this.state.messages

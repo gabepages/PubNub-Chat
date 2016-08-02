@@ -87,7 +87,9 @@ export default class ChatRoom extends React.Component {
       this.setState({
         messages: messages
       })
-   }
+      const scrollSection = document.querySelector('.message-section')
+      scrollSection.scrollTop = scrollSection.scrollHeight
+    }
   }
   sendMessage (message) {
     const pubnub = this.state.pubnub;
@@ -110,6 +112,8 @@ export default class ChatRoom extends React.Component {
        console.log(e);
      }
     });
+    const scrollSection = document.querySelector('.message-section')
+    scrollSection.animatescrollTop = scrollSection.scrollHeight
   }
   render() {
     return (

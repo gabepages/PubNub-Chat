@@ -72,8 +72,8 @@ export default class ChatRoom extends React.Component {
 
     // Initialize PubNub instance with personal UUID from login page
     const pubnub = PUBNUB({
-      subscribe_key: 'sub-c-e1c8464a-54f6-11e6-b182-02ee2ddab7fe',
-      publish_key: 'pub-c-1a91a807-a7f6-4bf2-9bb4-9d8936226301',
+      subscribe_key: 'sub-c-92178a26-58fb-11e6-8078-0619f8945a4f',
+      publish_key: 'pub-c-f6ef5731-b48f-45a1-bbae-7eec47df91d4',
       uuid: uuid
     });
 
@@ -118,8 +118,8 @@ export default class ChatRoom extends React.Component {
 
     // Initialize PubNub instance with personal UUID from login page
     const pubnub = PUBNUB({
-      subscribe_key: 'sub-c-e1c8464a-54f6-11e6-b182-02ee2ddab7fe',
-      publish_key: 'pub-c-1a91a807-a7f6-4bf2-9bb4-9d8936226301',
+      subscribe_key: 'sub-c-92178a26-58fb-11e6-8078-0619f8945a4f',
+      publish_key: 'pub-c-f6ef5731-b48f-45a1-bbae-7eec47df91d4',
       uuid: uuid
     });
 
@@ -340,8 +340,8 @@ export default class ChatRoom extends React.Component {
 
     // Initialize PubNub instance with personal UUID from login page
     const pubnub = PUBNUB({
-      subscribe_key: 'sub-c-e1c8464a-54f6-11e6-b182-02ee2ddab7fe',
-      publish_key: 'pub-c-1a91a807-a7f6-4bf2-9bb4-9d8936226301',
+      subscribe_key: 'sub-c-92178a26-58fb-11e6-8078-0619f8945a4f',
+      publish_key: 'pub-c-f6ef5731-b48f-45a1-bbae-7eec47df91d4',
       uuid: uuid
     });
 

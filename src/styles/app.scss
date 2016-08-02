@@ -61,16 +61,16 @@ body{
   background-color: lightgrey;
   .message-section{
     display: flex;
+    flex: 1;
     flex-direction: column;
     font-family: Helvetica;
-    max-height: 92vh;
-    overflow: auto;
+    overflow-y: scroll;
     width: 97%;
-    justify-content: flex-start;
     padding-left: 15px;
     padding-right: 15px;
     .messageSent{
       align-self: flex-end;
+      flex: 0 0 auto;
       h3{
         display: inline-block;
         padding: 4px 10px 4px 10px;
@@ -83,6 +83,7 @@ body{
       }
     }
     .messageRecieved{
+      flex: 0 0 auto;
       p{
         color: darkslategrey;
         margin: 10px 0 0 5px;
@@ -100,11 +101,8 @@ body{
     }
   }
   .input-section{
-    width: 75%;
     background-color: rgb(41, 53, 64);
     height: 8vh;
-    position: absolute;
-    bottom: 0;
     form{
       height: 6vh;
       margin-left: 15px;

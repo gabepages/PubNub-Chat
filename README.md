@@ -179,6 +179,16 @@ export default class ChatRoom extends React.Component {
       })
     }
   }
+  removeUser(arr) {
+    var what, a = arguments, L = a.length, ax;
+    while (L > 1 && arr.length) {
+        what = a[--L];
+        while ((ax= arr.indexOf(what)) !== -1) {
+            arr.splice(ax, 1)
+        }
+    }
+    return arr;
+  }
   scrollToBottom(){
     const scrollSection = document.querySelector('.message-section')
     scrollSection.scrollTop = scrollSection.scrollHeight
